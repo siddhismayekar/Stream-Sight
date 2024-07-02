@@ -107,18 +107,11 @@ def app():
     st.markdown(contact_form, unsafe_allow_html=True)
 
     # # Use Local CSS File
-    # def local_css(file_name):
-    #     with open(file_name) as f:
-    #         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+    css_file_path = "style/style.css"
 
-    # local_css("style/style.css")
-    def load_css(file_name):
-    file_path = Path(file_name)
-    if file_path.exists():
-        with open(file_path, "r") as f:
-            st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
-    else:
-        st.error(f"CSS file not found: {file_name}")
+    with open(css_file_path) as f:
+        css_content = f.read()
+    st.markdown(f"<style>{css_content}</style>", unsafe_allow_html=True)
     # Footer Section
     st.markdown("""
         <style>
