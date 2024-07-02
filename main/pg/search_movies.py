@@ -26,9 +26,9 @@ def app():
 
                 filtered_movies = [movie for movie in movies if movie.get('title') and movie.get('poster_url') and movie.get('provider_name')]
 
-                netflix_icon = get_img_as_base64("image/icons8-netflix-64.png")
-                amazon_icon = get_img_as_base64("image/icons8-amazon-prime-64.png")
-                disney_icon = get_img_as_base64("image/icons8-disney-64.png")
+                netflix_icon = get_img_as_base64("main/image/icons8-netflix-64.png")
+                amazon_icon = get_img_as_base64("main/image/icons8-amazon-prime-64.png")
+                disney_icon = get_img_as_base64("main/image/icons8-disney-64.png")
 
                 for row in range(0, len(filtered_movies), num_columns):
                     columns = st.columns([2]*num_columns)
