@@ -10,14 +10,6 @@ def get_base64_image(image_path):
     with open(image_path, "rb") as img_file:
         return base64.b64encode(img_file.read()).decode("utf-8")
 from pathlib import Path
-
-def load_css(file_name):
-    file_path = Path(file_name)
-    if file_path.exists():
-        with open(file_path, "r") as f:
-            st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
-    else:
-        st.error(f"CSS file not found: {file_name}")
 def app():
     # Load Lottie animations
     lottie_hero = "animation/man_watching_movie.json"
