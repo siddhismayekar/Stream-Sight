@@ -3,7 +3,21 @@ import streamlit as st
 from streamlit_lottie import st_lottie
 import json
 import api
+import base64
 
+# Function to convert image to base64
+def get_base64_image(image_path):
+    with open(image_path, "rb") as img_file:
+        return base64.b64encode(img_file.read()).decode("utf-8")
+from pathlib import Path
+
+def load_css(file_name):
+    file_path = Path(file_name)
+    if file_path.exists():
+        with open(file_path, "r") as f:
+            st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+    else:
+        st.error(f"CSS file not found: {file_name}")
 def app():
     # Load Lottie animations
     lottie_hero = "animation/man_watching_movie.json"
@@ -100,12 +114,12 @@ def app():
 
     st.markdown(contact_form, unsafe_allow_html=True)
 
-    # Use Local CSS File
-    def local_css(file_name):
-        with open(file_name) as f:
-            st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+    # # Use Local CSS File
+    # def local_css(file_name):
+    #     with open(file_name) as f:
+    #         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
-    local_css("style/style.css")
+    # local_css("style/style.css")
     
     # Footer Section
     st.markdown("""
