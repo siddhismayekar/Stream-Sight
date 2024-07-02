@@ -12,10 +12,10 @@ def get_base64_image(image_path):
 from pathlib import Path
 def app():
     # Load Lottie animations
-    lottie_hero = "animation/man_watching_movie.json"
-    logo_net = "animation/netflix_logo.json"
-    logo_pri = "animation/prime_video_logo.json"
-    logo_dis = "animation/disney_logo.json"
+    lottie_hero = load_lottie_file("animation/man_watching_movie.json")
+    logo_net = load_lottie_file("animation/netflix_logo.json")
+    logo_pri = load_lottie_file("animation/prime_video_logo.json")
+    logo_dis = load_lottie_file("animation/disney_logo.json")
 
     # Display logos
     l1, l2, l3 = st.columns(3)
@@ -32,7 +32,7 @@ def app():
         st_lottie(lottie_hero, height=400)
     with c1:
         # Convert image to base64
-        bg_image_base64 = "image/hgbg.jpg"
+        bg_image_base64 = get_base64_image("image/hgbg.jpg")
 
         # Hero Section
         st.markdown(f"""
