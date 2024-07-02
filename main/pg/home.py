@@ -4,6 +4,7 @@ from streamlit_lottie import st_lottie
 import json
 import api
 import base64
+from pathlib import Path
 
 # Function to load Lottie animations from a file
 def load_lottie_file(filepath: Path):
