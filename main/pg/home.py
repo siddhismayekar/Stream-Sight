@@ -26,7 +26,7 @@ def app():
         st_lottie(lottie_hero, height=400)
     with c1:
         # Convert image to base64
-        bg_image_base64 = image/hgbg.jpg"
+        bg_image_base64 = "image/hgbg.jpg"
 
         # Hero Section
         st.markdown(f"""
