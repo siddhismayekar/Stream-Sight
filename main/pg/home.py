@@ -16,7 +16,7 @@ def get_base64_image(image_path):
 
 def app():
     # Load Lottie animations
-    lottie_hero = load_lottie_file("animation/man_watching_movie.json")
+    lottie_hero = "animation/man_watching_movie.json"
     logo_net = load_lottie_file("animation/netflix_logo.json")
     logo_pri = load_lottie_file("animation/prime_video_logo.json")
     logo_dis = load_lottie_file("animation/disney_logo.json")
