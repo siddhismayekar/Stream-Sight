@@ -15,7 +15,10 @@ firebase_credentials = {
     "private_key": st.secrets["firebase_credentials"]["private_key"].replace('\\n', '\n'),
     "client_email": st.secrets["firebase_credentials"]["client_email"],
     "client_id": st.secrets["firebase_credentials"]["client_id"],
-    
+    "auth_uri": st.secrets["firebase_credentials"]["auth_uri"],
+    "token_uri": st.secrets["firebase_credentials"]["token_uri"],
+    "auth_provider_x509_cert_url": st.secrets["firebase_credentials"]["auth_provider_x509_cert_url"],
+    "client_x509_cert_url": st.secrets["firebase_credentials"]["client_x509_cert_url"]
 }
 
 # Initialize Firebase
