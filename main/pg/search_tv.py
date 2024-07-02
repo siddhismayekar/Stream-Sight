@@ -26,9 +26,9 @@ def app():
                 filtered_tv_shows = [tv_show for tv_show in tv_shows if tv_show.get('name') and tv_show.get('poster_url') and tv_show.get('provider_name')]
 
                 # Load the base64 encoded images
-                netflix_icon = get_img_as_base64("image/icons8-netflix-64.png")
-                amazon_icon = get_img_as_base64("image/icons8-amazon-prime-64.png")
-                disney_icon = get_img_as_base64("image/icons8-disney-64.png")
+                netflix_icon = get_img_as_base64("main/image/icons8-netflix-64.png")
+                amazon_icon = get_img_as_base64("main/image/icons8-amazon-prime-64.png")
+                disney_icon = get_img_as_base64("main/image/icons8-disney-64.png")
 
                 for row in range(0, len(filtered_tv_shows), num_columns):
                     columns = st.columns([2]*num_columns)
