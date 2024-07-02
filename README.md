@@ -4,6 +4,9 @@
 
 StreamSight is an interactive web application designed to help users discover and manage their favorite movies and TV shows. It provides personalized recommendations, advanced search functionalities, and user-friendly management of watchlists and favourites. Built using Python and Streamlit, with Firebase for real-time data management, StreamSight aims to enhance the content discovery experience.
 
+## Visit Site
+[StreamSight](https://stream-sight-watch-wise.streamlit.app/)
+
 ## Features
 
 - **User Authentication**: Secure sign-up and log-in functionality.
@@ -24,5 +27,4 @@ StreamSight is an interactive web application designed to help users discover an
   - Pandas
   - NumPy
   - Requests
-## Visit Site
-[StreamSight](https://stream-sight-watch-wise.streamlit.app/)
+
