@@ -5,6 +5,10 @@ import json
 import api
 import base64
 
+# Function to load Lottie animations from a file
+def load_lottie_file(filepath: str):
+    with open(filepath, "r") as f:
+        return json.load(f)
 # Function to convert image to base64
 def get_base64_image(image_path):
     with open(image_path, "rb") as img_file:
