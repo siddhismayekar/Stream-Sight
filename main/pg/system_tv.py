@@ -6,13 +6,13 @@ import base64
 import streamlit as st
 from api import api_key
 import gzip
-
+import lzma
 
 # Load data function
 def load_data():
     with gzip.open("main/pickle/tv_ls.pkl.gz", 'rb') as f:
         tvs = pickle.load(f)
-    with gzip.open("main/pickle/similarity_tv.pkl.xz", 'rb') as f:
+    with lzma.open("main/pickle/similarity_tv.pkl.xz", 'rb') as f:
         similarity = pickle.load(f)
     return tvs, similarity
 
