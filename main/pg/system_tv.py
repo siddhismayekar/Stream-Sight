@@ -10,9 +10,9 @@ import gzip
 
 # Load data function
 def load_data():
-    with gzip.open("pickle/tv_ls.pkl.gz", 'rb') as f:
+    with gzip.open("main/pickle/tv_ls.pkl.gz", 'rb') as f:
         tvs = pickle.load(f)
-    with gzip.open("pickle/similarity_tv.pkl.gz", 'rb') as f:
+    with gzip.open("main/pickle/similarity_tv.pkl.gz", 'rb') as f:
         similarity = pickle.load(f)
     return tvs, similarity
 
@@ -83,12 +83,12 @@ def tab():
                 "Netflix": "https://www.netflix.com",
                 "Amazon Prime Video": "https://www.primevideo.com/storefront/ref=atv_hom_pri_c_9zZ8D2_hm_mv?contentType=tv&contentId=home",
                 "Prime Video": "https://www.primevideo.com/storefront/ref=atv_hom_pri_c_9zZ8D2_hm_mv?contentType=tv&contentId=home",
-                "Disney Plus": "https://www.hotstar.com/in/tvs"
+                "Disney Plus": "https://www.hotstar.com/in"
             }
             
-            netflix_icon = get_img_as_base64("image/icons8-netflix-64.png")
-            amazon_icon = get_img_as_base64("image/icons8-amazon-prime-64.png")
-            disney_icon = get_img_as_base64("image/icons8-disney-64.png")
+            netflix_icon = get_img_as_base64("main/image/icons8-netflix-64.png")
+            amazon_icon = get_img_as_base64("main/image/icons8-amazon-prime-64.png")
+            disney_icon = get_img_as_base64("main/image/icons8-disney-64.png")
             
             provider_icons = {
                 "Netflix": netflix_icon,
@@ -150,7 +150,7 @@ def tab():
             return "#"
 
         # Load the prepared DataFrame from the .pkl file
-        with open('pickle/new_tv.pkl', 'rb') as f:
+        with open('main/pickle/new_tv.pkl', 'rb') as f:
             new_df = pickle.load(f)
 
         genres = ['Action & Adventure','Animation','Comedy','Crime','Documentary','Drama','Family',
