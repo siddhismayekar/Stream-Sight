@@ -2,13 +2,7 @@
 import streamlit as st
 from streamlit_lottie import st_lottie
 import json
-import base64
 import api
-
-# Function to convert image to base64
-def get_base64_image(image_path):
-    with open(image_path, "rb") as img_file:
-        return base64.b64encode(img_file.read()).decode("utf-8")
 
 def app():
     # Load Lottie animations
@@ -32,7 +26,7 @@ def app():
         st_lottie(lottie_hero, height=400)
     with c1:
         # Convert image to base64
-        bg_image_base64 = get_base64_image("image/hgbg.jpg")
+        bg_image_base64 = image/hgbg.jpg"
 
         # Hero Section
         st.markdown(f"""
