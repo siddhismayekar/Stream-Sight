@@ -12,7 +12,7 @@ import gzip
 def load_data():
     with gzip.open("main/pickle/tv_ls.pkl.gz", 'rb') as f:
         tvs = pickle.load(f)
-    with gzip.open("main/pickle/similarity_tv.pkl.gz", 'rb') as f:
+    with gzip.open("main/pickle/similarity_tv.pkl.gz.xz", 'rb') as f:
         similarity = pickle.load(f)
     return tvs, similarity
 
