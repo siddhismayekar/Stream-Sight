@@ -6,20 +6,19 @@ import api
 import base64
 
 # Function to load Lottie animations from a file
-def load_lottie_file(filepath: str):
+def load_lottie_file(filepath: Path):
     with open(filepath, "r") as f:
         return json.load(f)
-# Function to convert image to base64
-def get_base64_image(image_path):
-    with open(image_path, "rb") as img_file:
-        return base64.b64encode(img_file.read()).decode("utf-8")
-from pathlib import Path
+
 def app():
+    # Define base directory
+    base_dir = Path(__file__).parent
+
     # Load Lottie animations
-    lottie_hero = load_lottie_file("animation/man_watching_movie.json")
-    logo_net = load_lottie_file("animation/netflix_logo.json")
-    logo_pri = load_lottie_file("animation/prime_video_logo.json")
-    logo_dis = load_lottie_file("animation/disney_logo.json")
+    lottie_hero = load_lottie_file(base_dir / "animation/man_watching_movie.json")
+    logo_net = load_lottie_file(base_dir / "animation/netflix_logo.json")
+    logo_pri = load_lottie_file(base_dir / "animation/prime_video_logo.json")
+    logo_dis = load_lottie_file(base_dir / "animation/disney_logo.json")
 
     # Display logos
     l1, l2, l3 = st.columns(3)
@@ -36,7 +35,7 @@ def app():
         st_lottie(lottie_hero, height=400)
     with c1:
         # Convert image to base64
-        bg_image_base64 = get_base64_image("image/hgbg.jpg")
+        bg_image_base64 = get_base64_image(base_dir / "image/hgbg.jpg")
 
         # Hero Section
         st.markdown(f"""
@@ -161,6 +160,5 @@ def app():
             <p>&copy; 2024 StreamSight. All rights reserved.</p>
         </div>
     """, unsafe_allow_html=True)
-
 
 
