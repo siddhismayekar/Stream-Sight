@@ -31,7 +31,7 @@ def search_movies(query, api_key, providers_data):
     params = {
         "api_key": api_key,  
         "include_adult": False,
-        "language": "en",
+        "language": "en","in",
         "query": query
     }
     response = requests.get(url, params=params, )
